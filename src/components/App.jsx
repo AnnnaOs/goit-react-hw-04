@@ -7,7 +7,6 @@ import LoadMoreBtn from './LoadMoreBtn/LoadMoreBtn';
 import Loader from './Loader/Loader';
 import ErrorMessage from './ErrorMessage/ErrorMessage';
 import ImageModal from './ImageModal/ImageModal';
-import css from './App.module.css';
 
 const App = () => {
   const [images, setImages] = useState([]);
