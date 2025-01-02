@@ -69,7 +69,7 @@ const App = () => {
     <>
       <SearchBar onSubmit={getInputValue} />
       <Toaster />
-      <div className={css.container}>
+      <div>
         {error ? (
           <ErrorMessage message={error} />
         ) : (
