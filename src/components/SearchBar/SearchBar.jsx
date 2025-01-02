@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types';
 import { useState } from 'react';
+import { GoSearch } from 'react-icons/go';
 import toast from 'react-hot-toast';
 import css from './SearchBar.module.css';
 
@@ -16,25 +17,29 @@ const SearchBar = ({ onSubmit }) => {
       return;
     }
     onSubmit(query.trim());
-    setQuery('');
+    // setQuery('');
   };
 
   return (
     <header className={css.searchBar}>
       <form onSubmit={handleSubmit} className={css.searchBarForm}>
-        <input
-          type="text"
-          name="query"
-          value={query}
-          onChange={e => setQuery(e.target.value.toLowerCase())}
-          autoComplete="off"
-          autoFocus
-          placeholder="Search images and photos"
-          className={css.searchBarInput}
-        />
-        <button type="submit" className={css.searchBarBtn}>
-          Search
-        </button>
+        <div className={css.inputWrap}>
+          <GoSearch
+            className={css.searchBarIcon}
+            size={16}
+            onClick={ev => handleSubmit(ev)}
+          />
+          <input
+            type="text"
+            name="query"
+            value={query}
+            onChange={e => setQuery(e.target.value.toLowerCase())}
+            autoComplete="off"
+            autoFocus
+            placeholder="Search images and photos"
+            className={css.searchBarInput}
+          />
+        </div>
       </form>
     </header>
   );
